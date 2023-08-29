@@ -85,11 +85,16 @@ function caseSimilaire(dir:LineDirection,props:PropType & {player:PLAYER}):numbe
 
     function checkSens(sens:number[]) {
         let newidx = i + sens[0] + sens[1] * nCol;
-        while(board[newidx] === player){            
+        while(board[newidx] === player && sameLine(newidx,i)){            
             ret.push(newidx);
             newidx = newidx + sens[0] + sens[1] * nCol;
             // caseSimilaire(dir,{...props,i:newidx});     //On appelle récursivement la fct avec l'index mis à jour, cool syntax à tester
         }
     }
+
+    function sameLine(idx1:number,idx2:number){
+        return Math.floor(idx1/nCol) === Math.floor(idx2/nCol);
+    }
 }
+
 

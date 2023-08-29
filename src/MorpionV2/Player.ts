@@ -1,6 +1,6 @@
 enum PLAYER{
     X = 'X',
-    O = 'O',
+    // O = 'O',
     // I = 'I'
     //TODO: I = 'V' -> error for value?PLAYER[value!] à comprendre          
 }
